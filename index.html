@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Half Court 1v1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game"></div>
+
+  <div id="hud">
+    <div class="score"><span>YOU</span><b id="playerScore">0</b><span>CPU</span><b>0</b></div>
+    <div id="feedback">GET BUCKETS</div>
+    <div id="meter"><div id="meterFill"></div><div id="greenZone"></div></div>
+    <div class="controls">
+      WASD Move · Shift Sprint · E Crossover · Q Behind Back · Tab Between Legs · R Hesi/Spin · Hold F Shoot
+    </div>
+  </div>
+
+  <div id="start">
+    <div class="panel">
+      <h1>HALF COURT 1v1</h1>
+      <p>Beat the CPU off the dribble and time your jumper.</p>
+      <p class="small">The CPU guards movement, but <b>cannot contest or block shots.</b></p>
+      <button id="play">PLAY</button>
+    </div>
+  </div>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>
