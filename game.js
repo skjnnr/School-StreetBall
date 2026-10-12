@@ -130,7 +130,7 @@ function updateBall(dt,time){
 }
 function updatePlayer(dt){
   if(moveLock>0)moveLock-=dt;
-  let x=(keys.KeyD?1:0)-(keys.KeyA?1:0),z=(keys.KeyS?1:0)-(keys.KeyW?1:0);
+  let x=(keys.KeyA?1:0)-(keys.KeyD?1:0),z=(keys.KeyW?1:0)-(keys.KeyS?1:0);
   const len=Math.hypot(x,z); if(len){x/=len;z/=len;}
   const speed=keys.ShiftLeft||keys.ShiftRight?7.1:5.0;
   player.position.x=THREE.MathUtils.clamp(player.position.x+x*speed*dt,-13.6,13.6);
@@ -164,7 +164,7 @@ function animate(){
   const dt=Math.min(clock.getDelta(),.033),time=performance.now()/1000;
   if(started){
     updatePlayer(dt); updateCPU(dt); updateBall(dt,time); updateCamera(dt);
-    if(shooting){charge+=dt*.82;const pct=(charge%1);fill.style.width=(pct*100)+"%";}
+    if(shooting){charge+=dt*1.75;const pct=(charge%1);fill.style.width=(pct*100)+"%";}
   }else updateCamera(dt);
   renderer.render(scene,camera);
 }
